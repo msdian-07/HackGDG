@@ -12,8 +12,8 @@
 
 #define WIFI_SSID "Abcdefg"  
 #define WIFI_PASSWORD "12349876" 
-#define FIREBASE_HOST "https://sericulture-e9075-default-rtdb.firebaseio.com/"
-#define FIREBASE_Authorization_key "AIzaSyC_RYE-M-qMx7FRQ7dg7SEvMh6nrXUrd2w"
+#define FIREBASE_HOST "*****************************************"
+#define FIREBASE_Authorization_key "************************************"
 
 TM1637Display display(CLK, DIO);
 uint8_t Celcius[] = {
