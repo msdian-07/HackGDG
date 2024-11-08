@@ -10,7 +10,8 @@ import { useEffect, useState } from 'react';
 import { ref, onValue ,update} from "firebase/database";
 import { createStackNavigator } from '@react-navigation/stack';
 import WebView from 'react-native-webview';
-
+import MapView, { Marker } from 'react-native-maps';
+import * as Location from 'expo-location';
 
 
 function HomeScreen({ navigation }) {
@@ -239,7 +240,7 @@ function HomeScreen({ navigation }) {
           <View style={styles.boxStream}><Text style={styles.textStream}>Disease Stream</Text></View>
         </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Zhagaram GPT', { url: '' })}>
+        <TouchableOpacity onPress={() => navigation.navigate('CameraView', { url: 'https://saptharishi-aibot.hf.space/' })}>
         <View style={styles.bot}>
           <Text style={{color:'white',fontSize:20,padding:5}}>Zhagaram GPT</Text>
         </View>
@@ -536,9 +537,91 @@ export function DiseaseScreen({ navigation }) {
   );
 }
 
+// map screen
 
+function MapScreen() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  // Dummy data for egg sellers and cocoon sellers
+  const eggSellers = [ 
+    { id: 1, name: "Egg Seller 1", latitude: 13.013512, longitude: 80.121342 },
+    { id: 2, name: "Egg Seller 2", latitude: 13.012728, longitude: 80.115710 },
+    
+  ];
+
+  const cocoonSellers = [ 
+    { id: 1, name: "Cocoon Buyer 1", latitude: 13.011693, longitude: 80.115345 },
+    { id: 2, name: "Cocoon Buyer 2", latitude: 13.012153, longitude: 80.114486 },
+  ];
+
+  // Fetch user's current location
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location.coords);
+    })();
+  }, []);
+
+  // Function to handle marker click and show details
+  const handleMarkerPress = (sellerType, seller) => {
+    Alert.alert(`${sellerType} Details`, `Name: ${seller.name}`);
+  };
+
+  return (
+    <View style={styles.containermap}>
+      {location ? (
+        <MapView
+          style={styles.map}
+          region={{
+            latitude: location.latitude,
+            longitude: location.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        >
+          {/* Markers for Egg Sellers (Red) */}
+          {eggSellers.map((seller) => (
+            <Marker
+              key={seller.id}
+              coordinate={{ latitude: seller.latitude, longitude: seller.longitude }}
+              pinColor="yellow" // Red color for egg sellers
+              onPress={() => handleMarkerPress("Egg Seller", seller)}
+            />
+          ))}
+
+          {/* Markers for Cocoon Sellers (Blue) */}
+          {cocoonSellers.map((seller) => (
+            <Marker
+              key={seller.id}
+              coordinate={{ latitude: seller.latitude, longitude: seller.longitude }}
+              pinColor="blue" // Blue color for cocoon sellers
+              onPress={() => handleMarkerPress("Cocoon Buyer", seller)}
+            />
+          ))}
+
+          {/* Marker for user's current location */}
+          <Marker
+            coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+            title="You are here"
+          />
+        </MapView>
+      ) : (
+        <Text>{errorMsg || 'Waiting for location...'}</Text>
+      )}
+    </View>
+  );
+}
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+
+
 
 const StackNavigator = () => {
   return (
@@ -555,13 +638,22 @@ const StackNavigator = () => {
         component={HomeScreen}
         options={({ navigation }) => ({
           headerRight: () => (
-            <Ionicons
-              name="document-text"
-              size={40}
-              color="white"
-              style={{ marginRight: 10 }}
-              onPress={() => navigation.navigate('Logs')}
-            />
+            <View style={{ flexDirection: 'row' }}>
+              <Ionicons
+                name="map-outline"
+                size={40}
+                color="white"
+                style={{ marginRight: 10 }}
+                onPress={() => navigation.navigate('MapScreen')} // Navigate to Map screen
+              />
+              <Ionicons
+                name="document-text"
+                size={40}
+                color="white"
+                style={{ marginRight: 10 }}
+                onPress={() => navigation.navigate('Logs')}
+              />
+            </View>
           ),
         })}
       />
@@ -601,6 +693,7 @@ const StackNavigator = () => {
     </Stack.Navigator>
   );
 };
+
 const CameraView = ({ route }) => {
   const { url } = route.params;
 
@@ -630,13 +723,22 @@ export default function App() {
           component={HomeScreen}
           options={({ navigation }) => ({
             headerRight: () => (
+              <View style={{ flexDirection: 'row' }}>
+              <Ionicons
+                name="location-sharp"
+                size={40}
+                color="white"
+                style={{ marginRight: 10 }}
+                onPress={() => navigation.navigate('Map')} // Navigate to Map screen
+              />
               <Ionicons
                 name="document-text"
                 size={40}
                 color="white"
                 style={{ marginRight: 10 }}
-                onPress={() => navigation.navigate('Logs')} // Navigate to Logs screen
+                onPress={() => navigation.navigate('Logs')}
               />
+            </View>
             ),
           })}
         />
@@ -652,6 +754,19 @@ export default function App() {
             ),
           })}
         />
+
+        <Stack.Screen
+          name="Map"
+          component={MapScreen}
+          options={({ navigation }) => ({
+            headerRight: () => (
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Text style={{ marginRight: 15, fontSize: 17 }}>Back</Text>
+              </TouchableOpacity>
+            ),
+          })}
+        />
+        
 
         <Stack.Screen
           name="Pest Stream"
@@ -808,7 +923,14 @@ const styles = StyleSheet.create({
     
   },camera:{
     flex:1,
-  }
+  },containermap: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
 
 
 
