@@ -36,5 +36,5 @@
 <p align="justify">A map-based community platform allows sericulture farmers to connect and trade. The map shows locations where they can sell eggs or cocoons, and also find suppliers for their needs. This integration fosters a collaborative environment, allowing farmers to exchange resources, thereby enhancing the efficiency of the sericulture process. The map is dynamically updated based on community input.</p>
 
 # Video
-Interview and 3D model : [Link](https://youtu.be/eu6IPp7ifTY?si=LpqcY2weuS0ntlgN/)
+Interview and 3D model : [Link](https://youtu.be/eu6IPp7ifTY?si=LpqcY2weuS0ntlgN/)<br>
 Software Demo          : [Click Here](https://youtu.be/_mT7hF5tpWs)
