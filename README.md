@@ -17,22 +17,22 @@
 
 #
 
-HARDWARE - OVERALL INTEGRATION OF HARDWARE
+# HARDWARE - OVERALL INTEGRATION OF HARDWARE
 ![WhatsApp Image 2024-11-08 at 08 04 38_d6909968](https://github.com/user-attachments/assets/7b06242f-29be-4e04-a221-dcf5ada527a7)
 
 <p align="justify">The hardware system includes ESP32, temperature and humidity sensors (DHT-11), air quality sensors (MQ-135), and IP cameras. These components communicate with the server via IoT protocols, ensuring seamless data flow for monitoring temperature, humidity, and pest detection. The system integrates with the Node MCU, which triggers amber alerts and notifies the farmer through the app when pests are detected. Solar panels provide an alternative energy source, enhancing eco-friendliness.</p>
 
-SOFTWARE APP
+# SOFTWARE APP
 ![image](https://github.com/user-attachments/assets/0e54e5bd-738b-490b-93ed-69e927ed0b62)
 
 <p align="justify">The software architecture is built using Flask, YOLOv8, and React Native. The Flask framework handles back-end processes, managing communication between the hardware and software components. YOLOv8 provides object detection for pests and disease detection using ML models, while React Native ensures a smooth, cross-platform user interface for mobile applications, allowing farmers to monitor their sericulture environments in real time.</p>
  
-ZHAGARAM GPT 
+# ZHAGARAM GPT 
 ![image](https://github.com/user-attachments/assets/6a113d6c-900f-4a92-bc44-868ec4080ebc)
 
 <p align="justify">Zhagaram GPT integrates generative AI models such as Mistral AI, together with APIs and Hugging Face, for enhanced decision-making in sericulture processes. This GPT system provides intelligent insights and predictions on pest management, disease prevention, and yield improvement based on historical data, helping farmers take proactive steps to improve sericulture practices.</p>
 
-MAP COMMUNITY INTEGRATION
+# MAP COMMUNITY INTEGRATION
 ![image](https://github.com/user-attachments/assets/d4462720-3ba0-446e-a6a5-1b1641d659d0)
 
 <p align="justify">A map-based community platform allows sericulture farmers to connect and trade. The map shows locations where they can sell eggs or cocoons, and also find suppliers for their needs. This integration fosters a collaborative environment, allowing farmers to exchange resources, thereby enhancing the efficiency of the sericulture process. The map is dynamically updated based on community input.</p>
