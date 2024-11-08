@@ -10,8 +10,8 @@
 #define CO_SENSOR_CALIBRATION 9.83 
 #define SENSOR_SENSITIVITY_CO 0.2
 
-#define WIFI_SSID "Abcdefg"  
-#define WIFI_PASSWORD "12349876" 
+#define WIFI_SSID "*******"  
+#define WIFI_PASSWORD "*******" 
 #define FIREBASE_HOST "*****************************************"
 #define FIREBASE_Authorization_key "************************************"
 
