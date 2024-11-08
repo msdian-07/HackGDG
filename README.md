@@ -18,7 +18,7 @@
 #
 
 # HARDWARE - OVERALL INTEGRATION OF HARDWARE
-![WhatsApp Image 2024-11-08 at 08 04 38_d6909968](https://github.com/user-attachments/assets/7b06242f-29be-4e04-a221-dcf5ada527a7)
+![WhatsApp Image 2024-11-08 at 08 04 38_d6909968](https://github.com/user-attachments/assets/7b06242f-29be-4e04-a221-dcf5ada527a7 = 400x400)
 
 <p align="justify">The hardware system includes ESP32, temperature and humidity sensors (DHT-11), air quality sensors (MQ-135), and IP cameras. These components communicate with the server via IoT protocols, ensuring seamless data flow for monitoring temperature, humidity, and pest detection. The system integrates with the Node MCU, which triggers amber alerts and notifies the farmer through the app when pests are detected. Solar panels provide an alternative energy source, enhancing eco-friendliness.</p>
 
