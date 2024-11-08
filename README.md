@@ -21,7 +21,8 @@
 <p align="justify">The hardware system includes ESP32, temperature and humidity sensors (DHT-11), air quality sensors (MQ-135), and IP cameras. These components communicate with the server via IoT protocols, ensuring seamless data flow for monitoring temperature, humidity, and pest detection. The system integrates with the Node MCU, which triggers amber alerts and notifies the farmer through the app when pests are detected. Solar panels provide an alternative energy source, enhancing eco-friendliness.</p>
 
 # SOFTWARE APP
-![image](https://github.com/user-attachments/assets/0e54e5bd-738b-490b-93ed-69e927ed0b62)
+<p align="center">
+![image](https://github.com/user-attachments/assets/0e54e5bd-738b-490b-93ed-69e927ed0b62)</p>
 
 <p align="justify">The software architecture is built using Flask, YOLOv8, and React Native. The Flask framework handles back-end processes, managing communication between the hardware and software components. YOLOv8 provides object detection for pests and disease detection using ML models, while React Native ensures a smooth, cross-platform user interface for mobile applications, allowing farmers to monitor their sericulture environments in real time.</p>
  
