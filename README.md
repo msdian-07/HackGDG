@@ -26,7 +26,7 @@
 <p align="justify">The software architecture is built using Flask, YOLOv8, and React Native. The Flask framework handles back-end processes, managing communication between the hardware and software components. YOLOv8 provides object detection for pests and disease detection using ML models, while React Native ensures a smooth, cross-platform user interface for mobile applications, allowing farmers to monitor their sericulture environments in real time.</p>
  
 # ZHAGARAM GPT 
-![image](https://github.com/user-attachments/assets/6a113d6c-900f-4a92-bc44-868ec4080ebc)
+<p align="center"><img src="https://github.com/user-attachments/assets/6a113d6c-900f-4a92-bc44-868ec4080ebc" width=300>
 
 <p align="justify">Zhagaram GPT integrates generative AI models such as Mistral AI, together with APIs and Hugging Face, for enhanced decision-making in sericulture processes. This GPT system provides intelligent insights and predictions on pest management, disease prevention, and yield improvement based on historical data, helping farmers take proactive steps to improve sericulture practices.</p>
 
@@ -35,3 +35,4 @@
 
 <p align="justify">A map-based community platform allows sericulture farmers to connect and trade. The map shows locations where they can sell eggs or cocoons, and also find suppliers for their needs. This integration fosters a collaborative environment, allowing farmers to exchange resources, thereby enhancing the efficiency of the sericulture process. The map is dynamically updated based on community input.</p>
 
+# Video
