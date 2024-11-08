@@ -16,13 +16,12 @@
 <p align="justify"> The overall set up of the room comprises of the racks installed inside a room, each rack with 6 to 7 slabs. These all slabs are the places for the growth of the silkworms where they used to move one above the other. These racks are installed into the farm with a specific gaps between each other. This is the place where mulberry leaves, to which the silkworms feed upon is also provided. The pest detection is made by installing cameras into the farm. These cameras are efficient enough to detect the foreign objects such as lizards, cockroaches, squirrels etc. The installed cameras are the IP cameras where they are fixed on the four corners of the room. These IP cameras detect the foreign objects and gives a amber alert to the farmer. These amber noise automatically gets the foreign object away from the specified place. The notification is also given to the farmer for further inspection of the foreign object. The disease detection is made by installing cameras into the farm. These cameras are set up on the top of each racks, hence whether the silkworm is affected by any disease/unhealthy silkworm or it is unaffected/healthy silkworm is notified to the farmer. As we know, the silkworm diseases are communicable ( easily spreads from one silkworm to another silkworm), therefore, it is the foremost duty of the farmers to separate the unhealthy silkworms from the rack and isolate them as soon as possible. So, the racks are installed with IP cameras for the detection process to take place effectively. </p>
 
 # HARDWARE - OVERALL INTEGRATION OF HARDWARE
-<img src="https://github.com/user-attachments/assets/7b06242f-29be-4e04-a221-dcf5ada527a7" width=400>
+<p align="center"><img src="https://github.com/user-attachments/assets/7b06242f-29be-4e04-a221-dcf5ada527a7" width=400>
 
 <p align="justify">The hardware system includes ESP32, temperature and humidity sensors (DHT-11), air quality sensors (MQ-135), and IP cameras. These components communicate with the server via IoT protocols, ensuring seamless data flow for monitoring temperature, humidity, and pest detection. The system integrates with the Node MCU, which triggers amber alerts and notifies the farmer through the app when pests are detected. Solar panels provide an alternative energy source, enhancing eco-friendliness.</p>
 
 # SOFTWARE APP
-<p align="center">
-![image](https://github.com/user-attachments/assets/0e54e5bd-738b-490b-93ed-69e927ed0b62)</p>
+<p align="center"><ing src= "https://github.com/user-attachments/assets/0e54e5bd-738b-490b-93ed-69e927ed0b62"></p>
 
 <p align="justify">The software architecture is built using Flask, YOLOv8, and React Native. The Flask framework handles back-end processes, managing communication between the hardware and software components. YOLOv8 provides object detection for pests and disease detection using ML models, while React Native ensures a smooth, cross-platform user interface for mobile applications, allowing farmers to monitor their sericulture environments in real time.</p>
  
@@ -32,7 +31,7 @@
 <p align="justify">Zhagaram GPT integrates generative AI models such as Mistral AI, together with APIs and Hugging Face, for enhanced decision-making in sericulture processes. This GPT system provides intelligent insights and predictions on pest management, disease prevention, and yield improvement based on historical data, helping farmers take proactive steps to improve sericulture practices.</p>
 
 # MAP COMMUNITY INTEGRATION
-![image](https://github.com/user-attachments/assets/d4462720-3ba0-446e-a6a5-1b1641d659d0)
+<p align="center"><img src="https://github.com/user-attachments/assets/d4462720-3ba0-446e-a6a5-1b1641d659d0"></p>
 
 <p align="justify">A map-based community platform allows sericulture farmers to connect and trade. The map shows locations where they can sell eggs or cocoons, and also find suppliers for their needs. This integration fosters a collaborative environment, allowing farmers to exchange resources, thereby enhancing the efficiency of the sericulture process. The map is dynamically updated based on community input.</p>
 
